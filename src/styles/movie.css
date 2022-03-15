@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+  body{
+    background-image: url("https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/blue-curtain-spotlight-stage-background_MyV_atqd_thumb.jpg");
+    background-size: cover; 
+  }
+
+input[type=text] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  color: black;
+  
+  
+}
+section{
+  width: 70%;
+  margin: auto;
+  margin-top: 1%;
+  display: block;
+  margin-left: 8px;
+  padding: 10px;
+  
+}
+.sc-dkPtRN {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+}
+.cards {
+  width: 450px;
+  padding: 10px;
+  margin-left: 10px;
+}
+.cards:hover {
+  box-shadow: 0 0px 0px 0px rbga(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.image_box img {
+  width: 0px;
+  height: 100px;
+}
+
+.image_box img {
+  width: 300px;
+  height: 300px;
+}
+.details p:nth-child(1) {
+  font-weight: bold;
+  color: white;
+}
+.details p:nth-child(2) {
+  color: white;
+  font-size: 0.8rem;
+}
+.details p:nth-child(3) {
+  font-weight: bolx;
+  color: white;
+  font-weight: bold;
+}
+.details button {
+  padding: 10px 10px;
+  border: none;
+  font-weight: bold;
+  background-color: white;
+  outline: none;
+}
