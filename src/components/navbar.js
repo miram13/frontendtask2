@@ -5,20 +5,20 @@ import Link from '@material-ui/core/Link';
 import { createBrowserHistory } from 'history';
 import MovieIcon from '@mui/icons-material/Movie';
 const history = createBrowserHistory();
-const btnstyle = { padding: 10, marginLeft: 30, backgroundColor: "blue", color: "white" }
-const Navbar = ({ setShow, setOrderShow, size, fcount, ocount, setFavShow, setOrderedProductsShow, luser, logoutHandler }) => {
+const btnstyle = { padding: 10, marginLeft: 30,  color: "black" }
+const Navbar = ({ setShow,luser,setNotify, logoutHandler }) => {
 
   return (
     <nav>
       <div className="nav_box">
-        <span className="cinema_name" onClick={() => { setShow(true);    }}>
+        <span className="cinema_name" onClick={() => { setShow(true); setNotify(true)  }}>
           IT'S SHOW TIME
         </span>
-        <div className="notify" onClick={() => { setShow(false); }}>
-          <span>
+        <div className="notify"  onClick={() => { setShow(false);  } }>
+          {/* <span>
             <MovieIcon />
-          </span>
-          <span>{size}</span>
+          </span> */}
+          {/* <span>{size}</span> */}
 
         </div>
 

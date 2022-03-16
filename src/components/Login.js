@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/ShoppingBasket';
+// import LockOutlinedIcon from '@material-ui/icons/ShoppingBasket';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Container from '@material-ui/core/Container';
@@ -81,7 +81,7 @@ class Login extends Component {
 			password: this.state.password
 		};
 		axios
-			.get('/users/login', {params:userData})
+			.get('http://localhost:8080/users/login', {params:userData})
 			.then((response) => {
 				localStorage.setItem('AuthToken', `Bearer ${response.data}`);
 				this.setState({
@@ -105,9 +105,9 @@ class Login extends Component {
 			<Container component="main" maxWidth="xs">
 				<CssBaseline />
 				<div className={classes.paper}>
-					<Avatar className={classes.avatar}>
+					{/* <Avatar className={classes.avatar}>
 						<LockOutlinedIcon />
-					</Avatar>
+					</Avatar> */}
 					<Typography component="h1" variant="h5">
 						User SignIn Page
 					</Typography>

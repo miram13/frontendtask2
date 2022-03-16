@@ -21,21 +21,22 @@ nav {
 .cinema_name {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: black;
   font-family: cursive;
   cursor: pointer;
 }
 .notify {
   cursor: pointer;
+  
 }
 .notify span:nth-child(1) {
   font-size: 2rem;
-  color: white;
+  color:black;
 }
 .notify span:nth-child(2) {
   padding: 0 3px;
   background-color: red;
-  color: white;
+  color:black;
   font-weight: bolx;
   border-radius: 5px;
   position: relative;

@@ -5,7 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/ShoppingBasket';
+// import LockOutlinedIcon from '@material-ui/icons/ShoppingBasket';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -27,7 +27,7 @@ const styles = (theme) => ({
 		backgroundColor: '#FF3333'
 	},
 	form: {
-		width: '100%', // Fix IE 11 issue.
+		width: '100%', 
 		marginTop: theme.spacing(3)
 	},
 	submit: {
@@ -79,7 +79,7 @@ class Signup extends Component {
 		};
 		console.log(newUserData);
 		axios
-			.post('/users/signup', newUserData)
+			.post('http://localhost:8080/users/signup', newUserData)
 			.then((response) => {
 				console.log(response);
 				//localStorage.setItem('AuthToken', `Bearer ${response.data.token}`);
@@ -105,9 +105,9 @@ class Signup extends Component {
 			<Container component="main" maxWidth="xs">
 				<CssBaseline />
 				<div className={classes.paper}>
-					<Avatar className={classes.avatar}>
+					{/* <Avatar className={classes.avatar}>
 						<LockOutlinedIcon />
-					</Avatar>
+					</Avatar> */}
 					<Typography component="h1" variant="h5">
 						Registration Form
 					</Typography>

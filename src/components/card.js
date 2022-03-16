@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 
 
 
-const Cards = ({ item, handleAddtoNotify }) => {
+const Cards = ({ item,getmoviedetails }) => {
   const { title, price, img } = item;
 
 
@@ -17,7 +17,7 @@ const Cards = ({ item, handleAddtoNotify }) => {
 
 
         <p>Price - Rs{price}</p>
-        <Button onClick={() => handleAddtoNotify(item)} >BOOK TICKET</Button>
+        <Button style={{color:"white"}}onClick={() => getmoviedetails(item)} >BOOK TICKET</Button>
 
 
       </div>

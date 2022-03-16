@@ -50,8 +50,7 @@ const Home = () => {
       });
 
   };
-
-  const handleAddtoNotify = (item) => {
+  const handleSubmit = (item) => {
 
     const authToken = localStorage.getItem('AuthToken');
 
@@ -76,6 +75,34 @@ const Home = () => {
 
       });
     window.location.reload();
+    console.log(data);
+  };
+
+  const handleAddtoNotify = (item) => {
+console.log(item)
+    const authToken = localStorage.getItem('AuthToken');
+
+    axios.defaults.headers.common = { Authorization: `${authToken}` };
+    let url = `/Notify/notify/${item.id}`;
+    let data = [];
+    axios
+      .post(url, data)
+      .then((response) => {
+        console.log(response);
+        if (response.data != '') {
+
+        }
+        else {
+
+        }
+        // window.location.reload();
+      })
+      .catch((error) => {
+
+        console.log(error);
+
+      });
+    // window.location.reload();
     console.log(data);
   };
 
@@ -140,7 +167,7 @@ const Home = () => {
       {show ? (
         <Movie handleAddtoNotify={handleAddtoNotify} />
       ) : (
-        <Notify notify={notify} setShow={setShow} setNotify={setNotify} />
+        <Notify notify={notify} setShow={setShow} setNotify={setNotify} handleSubmit={handleSubmit}  />
       )}
     </React.Fragment>
 

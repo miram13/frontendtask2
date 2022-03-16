@@ -4,7 +4,7 @@
 }
 
   body{
-    background-image: url("https://dm0qx8t0i9gc9.cloudfront.net/thumbnails/image/rDtN98Qoishumwih/blue-curtain-spotlight-stage-background_MyV_atqd_thumb.jpg");
+    background-image: url("https://i.pinimg.com/736x/f3/1c/72/f31c72c764333a3bbd7b2fe61005fc30.jpg");
     background-size: cover; 
   }
 
@@ -51,21 +51,21 @@ section{
 }
 .details p:nth-child(1) {
   font-weight: bold;
-  color: white;
+  color: black;
 }
 .details p:nth-child(2) {
-  color: white;
+  color: black;
   font-size: 0.8rem;
 }
 .details p:nth-child(3) {
   font-weight: bolx;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 .details button {
   padding: 10px 10px;
   border: none;
   font-weight: bold;
-  background-color: white;
+  background-color: black;
   outline: none;
 }
