@@ -83,12 +83,8 @@ const Notify = ({ notify, setNotify, handleSubmit, item }) => {
         <form className="seat-pick" style={{ background: '#	808000', marginTop: "10%", marginLeft: "-750px" }}>
           <div class="seatStructure">
             <center>
-              
-             
-
+            
                 <tr>
-
-
                   {rows.map((element, index) => {
                     return (
                       <div key={index} className="row" style={{ marginTop: "-10px" }}  >

@@ -20,7 +20,7 @@ const styles = (theme) => ({
 		display: 'flex',
 		flexDirection: 'column',
 		alignItems: 'center',
-		backgroundColor:"#C6EEFC",
+		backgroundColor:"#FCF3CF ",
 		padding:"20px",
 	},
 	avatar: {
