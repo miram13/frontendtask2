@@ -107,6 +107,38 @@ const Home = () => {
   };
 
 
+
+  if (!mounted) {
+    const authToken = localStorage.getItem('AuthToken');
+    console.log(authToken);
+    const headers = { Authorization: `${authToken}` };
+    axios
+      .get('/secured/claim', { headers: headers })
+      .then((response) => {
+        console.log("Ares:" + response);
+        if (response.data !== '') {
+          setUser(true);
+          getNotifyList();
+
+
+        }
+        else {
+          setUser(false);
+          history.push('/login');
+          window.location.reload();
+        }
+      }).catch((error) => {
+
+        console.log(error);
+
+        history.push('/login');
+        window.location.reload();
+      });
+  }
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <React.Fragment>
       <Navbar setShow={setShow} size={notify.length} luser={luser} logoutHandler={logoutHandler} />
