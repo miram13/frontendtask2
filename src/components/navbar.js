@@ -1,12 +1,11 @@
 import React from "react";
 import "../styles/navbar.css";
 import { Button } from "@mui/material";
-import Link from '@material-ui/core/Link';
 import { createBrowserHistory } from 'history';
 import MovieIcon from '@mui/icons-material/Movie';
 const history = createBrowserHistory();
 const btnstyle = { padding: 10, marginLeft: 30,  color: "black" }
-const Navbar = ({ setShow,luser,setNotify, logoutHandler }) => {
+const Navbar = ({ setShow,luser,setNotify, logoutHandler,accountHandler }) => {
 
   return (
     <nav>
@@ -24,12 +23,12 @@ const Navbar = ({ setShow,luser,setNotify, logoutHandler }) => {
 
 
 
-        {luser ?
+        {
           <Button onClick={logoutHandler} style={btnstyle}>
             {"Logout"}
-          </Button> : <Link href="login" variant="body2">
-            {"Login"}
-          </Link>}
+          </Button>}
+          
+       
       </div>
     </nav>
   );

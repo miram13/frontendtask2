@@ -6,7 +6,7 @@ import Notify from "./notify";
 import { createBrowserHistory } from 'history';
 import { PaginatedList } from 'react-paginated-list';
 const history = createBrowserHistory();
-const Movie = ({ handleAddtoNotify, handleSubmit }) => {
+const Movie = ({ handleAddtoNotify, setSelectedMovie, setSeatShow, setAllSeats }) => {
   const authToken = localStorage.getItem('AuthToken');
   //console.log(authToken);
   const [mlist, setMovieList] = useState([]);
@@ -18,7 +18,7 @@ const Movie = ({ handleAddtoNotify, handleSubmit }) => {
   if (!mounted1) {
     axios.defaults.headers.common = { Authorization: `${authToken}` };
     axios
-      .get('http://localhost:8080/movies/list')
+      .get('/movies/list')
       .then((response) => {
         console.log(response.data);
         if (response.data != '') {
@@ -41,14 +41,35 @@ const Movie = ({ handleAddtoNotify, handleSubmit }) => {
   }, []);
 
   const getmoviedetails = (movie) => {
-    console.log(movie)
-    setShowbookingpage(true)
-    let movies = []
-    movies.push(movie)
-    setMoviedetails(movies)
-    console.log(showbookingpage)
-    handleAddtoNotify(movie)
-    console.log(moviedetails)
+    setSelectedMovie(movie);
+    axios.defaults.headers.common = { Authorization: `${authToken}` };
+    axios
+      .get('/movies/seatslist')
+      .then((response) => {
+        console.log(response.data);
+        if (response.data != '') {
+          setAllSeats(response.data);
+        }
+        else {
+          setAllSeats([]);
+
+        }
+      })
+      .catch((error) => {
+
+        console.log(error);
+
+        history.push('/login');
+      });
+    setSeatShow(true);
+    //console.log(movie)
+    //setShowbookingpage(true)
+    //let movies = []
+    //movies.push(movie)
+    //setMoviedetails(movies)
+   // console.log(showbookingpage)
+    //handleAddtoNotify(movie)
+    //console.log(moviedetails)
   }
 
   return (
@@ -71,7 +92,7 @@ const Movie = ({ handleAddtoNotify, handleSubmit }) => {
               {list.map((item, id) => {
                 console.log(item);
                 return (
-                  <Cards key={item.id} item={item} handleAddtoNotify={handleAddtoNotify} handleSubmit={handleSubmit} getmoviedetails={getmoviedetails}
+                  <Cards key={item.id} item={item} getmoviedetails={getmoviedetails} 
                   />
                 );
               })}

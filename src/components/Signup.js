@@ -79,7 +79,7 @@ class Signup extends Component {
 		};
 		console.log(newUserData);
 		axios
-			.post('http://localhost:8080/users/signup', newUserData)
+			.post('/users/signup', newUserData)
 			.then((response) => {
 				console.log(response);
 				//localStorage.setItem('AuthToken', `Bearer ${response.data.token}`);

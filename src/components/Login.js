@@ -81,7 +81,7 @@ class Login extends Component {
 			password: this.state.password
 		};
 		axios
-			.get('http://localhost:8080/users/login', {params:userData})
+			.get('/users/login', {params:userData})
 			.then((response) => {
 				localStorage.setItem('AuthToken', `Bearer ${response.data}`);
 				this.setState({
